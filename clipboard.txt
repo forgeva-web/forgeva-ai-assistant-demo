@@ -1,0 +1,6 @@
+Running seed command `tsx prisma/seed.ts` ...
+Seed complete
+Site id: cmmvewzfu0000br2tyehk4ul0
+Home page id: cmmvewzhd0001br2t4x5t0wjs
+Services page id: cmmvewzim0002br2tjta7zrat
+Session id: cmmvewzjp0003br2tjvl6u009

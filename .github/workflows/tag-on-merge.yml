@@ -1,0 +1,19 @@
+name: Tag on merge
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create tag
+        run: |
+          TAG="v$(date +'%Y.%m.%d.%H%M')"
+          git tag $TAG
+          git push origin $TAG

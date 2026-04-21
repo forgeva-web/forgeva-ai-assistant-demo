@@ -1,0 +1,92 @@
+{
+  "editor.inlineSuggest.showToolbar": "onHover",
+  "editor.minimap.maxColumn": 80,
+  "editor.inlineSuggest.edits.allowCodeShifting": "always",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "line",
+  "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.requireConfig": true,
+  "workbench.activityBar.location": "default",
+  "workbench.colorTheme": "Monokai Pro",
+  "workbench.preferredDarkColorTheme": "Monokai Pro Light",
+  "workbench.preferredHighContrastColorTheme": "Monokai Classic",
+  "workbench.preferredHighContrastLightColorTheme": "Monokai Pro Light",
+  "workbench.preferredLightColorTheme": "Monokai Pro Light",
+  "workbench.fontAliasing": "auto",
+  "workbench.iconTheme": "Monokai Pro Icons",
+  "workbench.colorCustomizations": {
+    "[Monokai Pro]": {
+      "terminalCursor.background": "#26619c",
+      "terminalCursor.foreground": "#ffffff",
+      "terminal.selectionBackground": "#557594ba",
+      "editorCursor.foreground": "#ffcc00",
+      "editor.lineHighlightBackground": "#2a2a2a",
+      "editor.selectionBackground": "#3e4451",
+      "editor.inactiveSelectionBackground": "#2c313c",
+      "editorIndentGuide.background": "#3a3a3a",
+      "editorIndentGuide.activeBackground": "#5a5a5a",
+      "editorBracketMatch.background": "#44475a",
+      "editorBracketMatch.border": "#ffcc00",
+      "scrollbarSlider.background": "#ffffff20",
+      "scrollbarSlider.hoverBackground": "#ffffff40",
+      "activityBar.background": "#1e1f1c",
+      "sideBar.background": "#1e1f1c",
+      "editorGroupHeader.tabsBackground": "#1e1f1c",
+      "statusBar.background": "#1e1f1c",
+      "statusBar.noFolderBackground": "#1e1f1c"
+    },
+    "[Monokai Pro Light]": {
+      "terminalCursor.background": "#26619c",
+      "terminalCursor.foreground": "#000000",
+      "terminal.selectionBackground": "#b3d4fc80",
+      "editorCursor.foreground": "#005cc5",
+      "editor.lineHighlightBackground": "#f2f2f2",
+      "editor.selectionBackground": "#cce2ff",
+      "editor.inactiveSelectionBackground": "#e6efff",
+      "editorIndentGuide.background": "#d0d0d0",
+      "editorIndentGuide.activeBackground": "#a0a0a0",
+      "editorBracketMatch.background": "#dbeafe",
+      "editorBracketMatch.border": "#005cc5",
+      "scrollbarSlider.background": "#00000020",
+      "scrollbarSlider.hoverBackground": "#00000040",
+      "activityBar.background": "#f7f7f7",
+      "sideBar.background": "#f7f7f7",
+      "editorGroupHeader.tabsBackground": "#f7f7f7",
+      "statusBar.background": "#eaeaea",
+      "statusBar.noFolderBackground": "#eaeaea"
+    }
+  },
+  "workbench.sideBar.location": "left",
+  "workbench.statusBar.visible": true,
+  "breadcrumbs.enabled": true,
+  "workbench.editor.autoLockGroups": {
+    "mainThreadWebview-simpleBrowser.view": false
+  },
+  "workbench.editor.centeredLayoutFixedWidth": true,
+  "zenMode.hideLineNumbers": false,
+  "notebook.insertToolbarLocation": "notebookToolbar",
+  "terminal.integrated.tabs.defaultIcon": "robot",
+  "notebook.consolidatedOutputButton": false,
+  "editor.inlineSuggest.edits.renderSideBySide": "never",
+  "editor.suggest.showInlineDetails": false,
+  "editor.tabCompletion": "on"
+}

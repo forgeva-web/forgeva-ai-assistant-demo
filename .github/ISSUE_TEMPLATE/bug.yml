@@ -1,0 +1,10 @@
+name: Bug Report
+description: Report a bug
+title: '[BUG] '
+body:
+  - type: textarea
+    attributes:
+      label: What happened?
+  - type: textarea
+    attributes:
+      label: Expected behavior

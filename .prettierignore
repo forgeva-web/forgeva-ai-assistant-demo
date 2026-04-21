@@ -1,0 +1,22 @@
+# Don't format these folders
+node_modules
+.next
+.turbo
+.vercel
+.vscode
+dist
+build
+
+# Don't format these files
+yarn.lock
+.env
+.env.local
+vercel.json
+package-lock.json
+package.json
+.gitignore
+
+# Don't format images and icons
+public/**/*.svg
+public/**/*.png
+public/**/*.jpg
