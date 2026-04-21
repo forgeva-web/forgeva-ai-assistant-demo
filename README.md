@@ -48,3 +48,77 @@ The system is split into three layers: the **dashboard app** (this repo), the
 **GraphQL API** (Apollo Server 4 running as a Next.js route handler), and the 
 **indexing pipeline** (a set of server-side modules that crawl, chunk, embed, and store 
 page content).
+
+Browser
+└── Apollo Client (GraphQL)
+└── /api/graphql (Apollo Server 4)
+└── Prisma 7 → Supabase (PostgreSQL + pgvector)
+Browser
+└── fetch /api/index-site (SSE stream)
+├── Phase 1: crawl → chunk → embed → store  →  fires indexed event
+└── Phase 2: generateProposedEdits (background) →  fires edits_complete event
+└── Apollo cache.evict() → ProposedEditsPanel re-queries automatically
+Accepted edit
+└── applyEdit resolver
+└── POST /api/revalidate on client site
+└── revalidateTag() → Next.js ISR cache purge
+
+The indexing pipeline runs in two phases deliberately — Phase 1 completes and dismisses 
+the progress modal so the user can immediately view crawled data, while Phase 2 generates 
+proposed edits in the background and evicts the Apollo cache when done, causing the 
+edits panel to update automatically without any user action.
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Frontend | Next.js 15, shadcn/ui, Tailwind CSS |
+| API | Apollo Server 4, GraphQL, GraphQL Codegen |
+| Database | Supabase (PostgreSQL + pgvector) |
+| ORM | Prisma 7 (`@prisma/adapter-pg`) |
+| AI | Anthropic Claude, OpenAI `text-embedding-3-small` |
+| Auth | Clerk |
+| Deployment | Vercel |
+| Crawling | Cheerio, custom BFS crawler |
+| Streaming | Native `ReadableStream` SSE |
+
+## Getting Started
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/forgeva-web/forgeva-ai-assistant-demo.git
+cd forgeva-ai-assistant-demo
+
+# 2. Install dependencies
+npm install
+
+# 3. Set up environment variables
+cp .env.example .env.local
+# Fill in your keys — see .env.example for required variables
+
+# 4. Generate Prisma client
+npx prisma generate
+
+# 5. Run the dev server
+npm run dev
+```
+
+**Required environment variables:**
+- `DATABASE_URL` — Supabase connection string (via connection pooler)
+- `DIRECT_URL` — direct Supabase connection (for Prisma migrations)
+- `ANTHROPIC_API_KEY` — Anthropic Claude API key
+- `OPENAI_API_KEY` — OpenAI API key (for embeddings)
+- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` + `CLERK_SECRET_KEY` — Clerk auth keys
+
+## Demo
+
+🔗 **[Live Demo](https://your-vercel-url.vercel.app)**
+
+The demo is pre-loaded with a sample client site (Mitch's Plumbing Co.) to demonstrate 
+the full indexing, scoring, and edit workflow without requiring your own site. Demo 
+sessions are rate-limited and reset automatically every 24 hours.
+
+---
+
+Built by [Mitch Duffy](https://github.com/duffymitch12) · 
+[Forgeva Web](https://github.com/forgeva-web)
