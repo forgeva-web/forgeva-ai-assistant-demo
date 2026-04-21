@@ -82,37 +82,9 @@ edits panel to update automatically without any user action.
 | Crawling | Cheerio, custom BFS crawler |
 | Streaming | Native `ReadableStream` SSE |
 
-## Getting Started
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/forgeva-web/forgeva-ai-assistant-demo.git
-cd forgeva-ai-assistant-demo
-
-# 2. Install dependencies
-npm install
-
-# 3. Set up environment variables
-cp .env.example .env.local
-# Fill in your keys — see .env.example for required variables
-
-# 4. Generate Prisma client
-npx prisma generate
-
-# 5. Run the dev server
-npm run dev
-```
-
-**Required environment variables:**
-- `DATABASE_URL` — Supabase connection string (via connection pooler)
-- `DIRECT_URL` — direct Supabase connection (for Prisma migrations)
-- `ANTHROPIC_API_KEY` — Anthropic Claude API key
-- `OPENAI_API_KEY` — OpenAI API key (for embeddings)
-- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` + `CLERK_SECRET_KEY` — Clerk auth keys
-
 ## Demo
 
-🔗 **[Live Demo](https://your-vercel-url.vercel.app)**
+🔗 **[Live Demo](https://forgeva-ai-assistant.vercel.app/)**
 
 The demo is pre-loaded with a sample client site (Mitch's Plumbing Co.) to demonstrate 
 the full indexing, scoring, and edit workflow without requiring your own site. Demo 
